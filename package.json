@@ -1,0 +1,26 @@
+{
+  "name": "node-poc-header-smuggling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./server/app.js",
+    "start_session": "nodemon --ignore sessions/ ./server/app.js session",
+    "client_loop": "node ./client/fake_auth.js",
+    "exploit": "node request.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
+    "session-file-store": "^1.4.0",
+    "uuid": "^8.0.0"
+  },
+  "devDependencies": {
+    "express-session": "^1.17.1"
+  }
+}

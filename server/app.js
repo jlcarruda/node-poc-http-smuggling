@@ -39,4 +39,12 @@ app.get('/smuggled', (req, res) => {
   res.send(`Smuggled response: \n${req.body ? req.body.name : "No Name"}`)
 })
 
+app.use((err, req, res, next) => {
+  console.log("Error")
+  console.error(err.stack)
+  console.log("REQ")
+  console.log(req)
+  next(err)
+})
+
 app.listen(port, '127.0.0.1', () => console.log(`Server is up on port ${port}. \n\nAUTH TYPE: ${SERVER_AUTH_MAP[authType] || "No Auth "}`))
